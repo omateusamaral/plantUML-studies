@@ -1,0 +1,9 @@
+@startuml
+"AWS SQS" -> API: trigger
+
+API --> Kafka: Emite para topico do kafka
+
+API --> "AWS S3": Salva também no s3 por 1 mês
+note right: Após 1 mês apagar (lambda data-remover que ira fazer)
+
+@enduml
